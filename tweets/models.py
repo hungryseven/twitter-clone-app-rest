@@ -32,3 +32,8 @@ class Tweet(MPTTModel):
         verbose_name = 'tweet'
         verbose_name_plural = 'Tweets'
         ordering = ('id',)
+
+    def __str__(self):
+        if len(self.text) > 50:
+            return self.text[:51] + '...'
+        return self.text
