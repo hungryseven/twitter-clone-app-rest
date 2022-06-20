@@ -32,5 +32,10 @@ class CustomUser(AbstractBaseUser, PermissionsMixin):
     EMAIL_FIELD = 'email'
     REQUIRED_FIELDS = ['email', 'profile_name', 'date_of_birth']
 
+    class Meta:
+        verbose_name = 'user'
+        verbose_name_plural = 'Users'
+        ordering = ('id',)
+
     def get_short_name(self):
         return self.username

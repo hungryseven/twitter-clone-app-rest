@@ -50,7 +50,7 @@ class CustomUserAdmin(UserAdmin):
     search_fields = ('username', 'email', 'profile_name')
     search_help_text = 'Поиск по имени пользователя, email или имени профиля'
     readonly_fields = (
-        'about', 'location', 'website', 'date_of_birth', 'date_joined'
+        'about', 'location', 'website', 'date_joined'
     )
     show_full_result_count = False
     ordering = ('pk',)
@@ -65,6 +65,13 @@ class CustomUserAdmin(UserAdmin):
         ),
         ('Разрешения', {
             'fields': ('is_staff', 'is_active')
+            }
+        ),
+    )
+    add_fieldsets = (
+        (None, {
+            'classes': ('wide',),
+            'fields': ('username', 'email', 'profile_name', 'date_of_birth', 'password1', 'password2'),
             }
         ),
     )
