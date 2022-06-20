@@ -47,8 +47,10 @@ INSTALLED_APPS = [
 
     'rest_framework',
     'debug_toolbar',
+    'mptt',
 
     'profiles.apps.ProfilesConfig',
+    'tweets.apps.TweetsConfig',
 ]
 
 MIDDLEWARE = [
